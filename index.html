@@ -26,8 +26,10 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/php_styles.css">
 
-    <title>LuxuryHotel Free HTML Template by Untree.co</title>
+    <title>MK Hotel</title>
+ 
   </head>
   <body>
 
@@ -57,7 +59,7 @@
       <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
           <div class="logo-wrap">
-            <a href="index.html" class="untree_co--site-logo">LuxuryHotel</a>
+            <a href="index.html" class="untree_co--site-logo">MK Hotel</a>
           </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">
@@ -65,9 +67,9 @@
               <li class="has-children">
                 <a href="rooms.html">Rooms</a>
                 <ul class="dropdown">
-                  <li class="has-children">
-                    <a href="#">King Bedroom</a>
-                    <ul class="dropdown">
+                  <li class="has-childre">
+                    <a href="#">Executive Suite</a>
+                    <!-- <ul class="dropdown">
                       <li>
                         <a href="#">King Bedroom</a>
                       </li>
@@ -77,13 +79,19 @@
                       <li>
                         <a href="#">Le Voila Suite</a>
                       </li>
-                    </ul>
+                    </ul> -->
                   </li>
                   <li>
-                    <a href="#">Queen &amp; Double Bedroom</a>
+                    <a href="#">Twin Bedroom</a>
                   </li>
                   <li>
-                    <a href="#">Le Voila Suite</a>
+                    <a href="#">Delux</a>
+                  </li>
+                   <li>
+                    <a href="#">Standard</a>
+                  </li>
+                    <li>
+                    <a href="#"> Mini Standard</a>
                   </li>
                 </ul>
               </li>
@@ -173,30 +181,69 @@
               </div>
             </div>
           </div>
-
+<!-- booking start -->
       <div class="container pt-0 pb-5">
             <div class="row justify-content-center text-center">  
-              <div class="col-lg-6 section-heading" data-aos="fade-up">
-                 <h2>Book a Room</h2>
-                <form action="book.php" method="POST">
-                  <input type="text" name="name" placeholder="Your name" required><br>
-                  <input type="email" name="email" placeholder="Email" required><br>
-                  <label>Check-in:</label>
-                  <input type="date" name="check_in" required><br>
-                  <label>Check-out:</label>
-                  <input type="date" name="check_out" required><br>
-                  <label>Room Type:</label>
-                  <select name="room_type" required>
-                    <option value="single">Single</option>
-                    <option value="double">Double</option>
-                    <option value="suite">Suite</option>
-                  </select><br><br>
-                  <button type="submit">Book Now</button>
-                </form>
+            <!-- Trigger Button -->
+          <!-- Trigger Button -->
+        <button id="openModalBtn" class="book-btn">Book Now</button>
+
+        <!-- Modal Structure -->
+        <div id="bookingModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Book a Room</h2>
+            <form action="book.php" method="POST" class="booking-form">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your name" required>
               </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <label>Check-in:</label>
+                <input type="date" name="check_in" required>
+              </div>
+              <div class="form-group">
+                <label>Check-out:</label>
+                <input type="date" name="check_out" required>
+              </div>
+              <div class="form-group">
+                <label>Room Type:</label>
+                <select name="room_type" required>
+                  <option value="single">Single</option>
+                  <option value="double">Double</option>
+                  <option value="suite">Suite</option>
+                </select>
+              </div>
+              <button type="submit" class="book-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+
             </div>
           </div>
+          <script>
+  const modal = document.getElementById("bookingModal");
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn = document.querySelector(".close-btn");
 
+  openBtn.onclick = () => {
+    modal.style.display = "block";
+  };
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+<!-- booking end -->
           <div class="container-fluid pt-5">
             <div class="suite-wrap overlap-image-1">
 
