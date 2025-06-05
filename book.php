@@ -8,10 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_out = $_POST['check_out'];
     $room_type = $_POST['room_type'];
     
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
     // Basic validation
     if (empty($name) || empty($email) || empty($check_in) || empty($check_out) || empty($room_type)) {
         echo "All fields are required.";
@@ -24,6 +20,8 @@ echo "</pre>";
 
     if ($stmt->execute()) {
         echo "✅ Booking successful!";
+        exit;
+ 
         $to = $email;
         $subject = "Booking Confirmation";
         $message = "Dear $name,\n\nYour booking from $check_in to $check_out for a $room_type room has been confirmed.\n\nThank you!";
