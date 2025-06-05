@@ -193,7 +193,7 @@
           <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Book a Room</h2>
-            <form action="book.php" method="POST" class="booking-form">
+            <form id="bookingForm" action="book.php" method="POST" class="booking-form">
               <div class="form-group">
                 <input type="text" name="name" placeholder="Your name" required>
               </div>
@@ -241,6 +241,36 @@
       modal.style.display = "none";
     }
   };
+</script>
+
+
+<!-- ajax fotrm -->
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text(); // or response.json() if you return JSON
+    })
+    .then(data => {
+      alert("✅ Booking successful!");
+      form.reset();
+      document.getElementById("bookingModal").style.display = "none";
+    })
+    .catch(error => {
+      console.error("Booking failed:", error);
+      alert("❌ Booking failed. Please try again.");
+    });
+  });
 </script>
 
 <!-- booking end -->
