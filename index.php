@@ -267,7 +267,7 @@
                 <div class="image-stack">
                   <div class="image-stack-item image-stack-item-top" data-jarallax-element="-50">
                     <div class="overlay"></div>
-                    <img src="images/mk_hotel/VIP/vip.JPG" alt="Image" class="img-fluid pic1">
+                    <img src="images/mk_hotel/VIP/vip4.JPG" alt="Image" class="img-fluid pic1">
                   </div>
                   <div class="image-stack-item image-stack-item-bottom">
                     <div class="overlay"></div>
@@ -280,7 +280,7 @@
                 <h2 class="suite-title">Executive Bedroom</h2>
                 <div class="suite-excerpt">
                  <p>Experience the height of luxury in our Executive Suite — a spacious, elegantly furnished room designed for both relaxation and productivity. Enjoy premium amenities, a private lounge area, and breathtaking views, all tailored to make your stay extraordinary.</p>
-                  <p><a href="#" class="readmore">Room Details</a></p>
+                  <p><a href="rooms.html#exec" class="readmore">Room Details</a></p>
                 </div>
               </div>
             </div>
@@ -304,7 +304,7 @@
                 <h2 class="suite-title">Twin Bedroom</h2>
                 <div class="suite-excerpt pr-5">
                   <p>Perfect for friends or colleagues, our Twin Bedroom features two comfortable beds, modern finishes, and thoughtful touches to ensure a relaxing and convenient stay. Ideal for shared travel without sacrificing space or comfort.</p>
-                  <p><a href="#" class="readmore">Room Details</a></p>
+                  <p><a href="rooms.html#twin" class="readmore">Room Details</a></p>
                 </div>
               </div>
 
