@@ -30,7 +30,61 @@
     <link rel="stylesheet" href="css/php_styles.css">
 
     <title>MK Hotel</title>
- 
+<style>
+  .loader {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #999;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .input-error {
+    border: 1px solid red;
+    background-color: #ffe5e5;
+  }
+
+  .error-text {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 3px;
+  }
+
+  .input-error {
+  border-color: red;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+}
+
+.loader {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+</style>
+
+
   </head>
   <body>
 
@@ -225,12 +279,12 @@
 
   <div class="form-group">
     <label>Check-in:</label>
-    <input type="datetime-local" name="check_in" required>
+    <input type="datetime-local" id="check_in" name="check_in" required>
   </div>
 
   <div class="form-group">
     <label>Check-out:</label>
-    <input type="datetime-local" name="check_out" required>
+    <input type="datetime-local" id="check_out" name="check_out" required>
   </div>
 
   <div class="form-group">
@@ -246,7 +300,7 @@
     <label>Number of Rooms:</label>
     <input type="number" name="number_of_rooms" id="number_of_rooms" min="1" required>
   </div>
-
+<div id="formErrors"></div>
   <button type="submit" class="btn btn-dark">Submit</button>
 </form>
 
@@ -555,105 +609,167 @@
 
     <script src="js/main.js"></script>
 
-      <script>
-        document.getElementById('room_type_id').addEventListener('change', function () {
-          const roomTypeId = this.value;
-          const availabilityText = document.getElementById('availability');
-          const roomCountInput = document.getElementById('number_of_rooms');
-          const roomCountGroup = document.getElementById('room-count-group');
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById("bookingModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const openBtn2 = document.getElementById("openModalBtn2");
+    const closeBtn = document.querySelector(".close-btn");
+    const openModal = () => modal.style.display = "block";
+    if (openBtn) openBtn.onclick = openModal;
+    if (openBtn2) openBtn2.onclick = openModal;
+    if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => { if (event.target === modal) modal.style.display = "none"; };
 
-          if (!roomTypeId) {
-            availabilityText.textContent = '';
-            roomCountGroup.style.display = 'none';
-            return;
-          }
+    const today = new Date().toISOString().split('T')[0];
+    const checkInInput = document.getElementById('check_in');
+    const checkOutInput = document.getElementById('check_out');
+    const roomSelect = document.getElementById('room_type_id');
+    const availabilityText = document.getElementById('availability');
+    const roomCountInput = document.getElementById('number_of_rooms');
+    const roomCountGroup = document.getElementById('room-count-group');
+    const errorContainer = document.getElementById('formErrors');
 
-          fetch('get_room_availability.php?room_type_id=' + roomTypeId)
-            .then(response => response.json())
-            .then(data => {
-              if (data.total_rooms > 0) {
-                availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
-                roomCountInput.max = data.total_rooms;
-                roomCountInput.value = 1;
-                roomCountGroup.style.display = 'block';
-              } else {
-                availabilityText.textContent = 'No rooms available.';
-                roomCountGroup.style.display = 'none';
-              }
-            });
-        });
-      </script>
+    if (checkInInput) checkInInput.min = today;
+    if (checkOutInput) checkOutInput.min = today;
 
- <script>
-  document.getElementById('bookingForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    let maxAvailableRooms = 0;
 
-    const form = e.target;
-    const formData = new FormData(form);
+    // ✅ Define fetchAvailability first to avoid hoisting errors
+    const fetchAvailability = () => {
+      const roomTypeId = roomSelect?.value;
+      const checkIn = checkInInput?.value;
+      const checkOut = checkOutInput?.value;
 
-    fetch('book.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+      if (!roomTypeId || !checkIn || !checkOut) {
+        availabilityText.innerHTML = `<span class="error-text">Please select room type and dates.</span>`;
+        roomCountGroup.style.display = 'none';
+        return;
       }
-      return response.text(); // or .json() if your PHP returns JSON
-    })
-  .then(data => {
 
-  alert('Booking successful!');
-      console.log(data);
+      availabilityText.innerHTML = 'Checking availability... <span class="loader"></span>';
 
-      form.reset(); // Optional: reset form
-      
-      location.href = location.href; // Forces a full reload
-
-    })
-
+      fetch(`get_room_availability.php?room_type_id=${roomTypeId}&check_in=${checkIn}&check_out=${checkOut}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.available_rooms > 0) {
+            maxAvailableRooms = data.available_rooms;
+            availabilityText.innerHTML = `Available: <strong>${data.available_rooms}</strong> out of <strong> ${data.total_rooms} </strong> room(s)`;
+            roomCountInput.max = data.available_rooms;
+            roomCountInput.value = 1;
+            roomCountGroup.style.display = 'block';
+          } else {
+            availabilityText.innerHTML = `<span class="error-text">No rooms available.</span>`;
+            roomCountGroup.style.display = 'none';
+          }
+        })
         .catch(error => {
-      console.error('Booking failed:', error);
-      alert('Booking failed: ' + error);
-    });
-  });
-</script>
-
-
-     <script>
-  const modal = document.getElementById("bookingModal");
-  const openBtn = document.getElementById("openModalBtn");   // Desktop button
-  const openBtn2 = document.getElementById("openModalBtn2"); // Mobile button
-  const closeBtn = document.querySelector(".close-btn");
-
-  // Function to open modal
-  const openModal = () => {
-    modal.style.display = "block";
-  };
-
-  // Attach to desktop button if it exists
-  if (openBtn) {
-    openBtn.onclick = openModal;
-  }
-
-  // Attach to mobile button if it exists
-  if (openBtn2) {
-    openBtn2.onclick = openModal;
-  }
-
-  // Close modal when clicking close button
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
+          console.error('Availability fetch failed:', error);
+          availabilityText.innerHTML = `<span class="error-text">Error checking availability.</span>`;
+          roomCountGroup.style.display = 'none';
+        });
     };
-  }
 
-  // Close modal when clicking outside of it
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    // 🔁 Auto-update checkout date if it's earlier than checkin
+    checkInInput?.addEventListener('change', () => {
+      const checkInDate = new Date(checkInInput.value);
+      const checkOutDate = new Date(checkOutInput.value);
+
+      if (!checkOutInput.value || checkOutDate <= checkInDate) {
+        checkOutInput.value = checkInInput.value;
+        checkOutInput.min = checkInInput.value;
+      }
+
+      fetchAvailability(); // refetch when check-in changes
+    });
+
+    checkOutInput?.addEventListener('change', fetchAvailability);
+    if (roomSelect) roomSelect.addEventListener('change', fetchAvailability);
+
+    // 🛑 Real-time validation on room count input
+    roomCountInput?.addEventListener('input', () => {
+      if (parseInt(roomCountInput.value) > maxAvailableRooms) {
+        roomCountInput.classList.add('input-error');
+        availabilityText.innerHTML = `<span class="error-text">You can't book more than ${maxAvailableRooms} room(s).</span>`;
+      } else {
+        roomCountInput.classList.remove('input-error');
+        availabilityText.innerHTML = `Available: <strong>${maxAvailableRooms}</strong> room(s)`;
+      }
+    });
+
+    // 🚀 Booking form submission
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorContainer.innerHTML = '';
+        let errors = [];
+        let isValid = true;
+
+        const fields = [
+          { id: 'name', label: 'Name' },
+          { id: 'email', label: 'Email' },
+          { id: 'phone', label: 'Phone' },
+          { id: 'check_in', label: 'Check-in date' },
+          { id: 'check_out', label: 'Check-out date' },
+          { id: 'room_type_id', label: 'Room type' },
+        ];
+
+        fields.forEach(field => {
+          const input = document.getElementById(field.id);
+          if (input && !input.value.trim()) {
+            input.classList.add('input-error');
+            errors.push(`${field.label} is required.`);
+            isValid = false;
+          } else {
+            input?.classList.remove('input-error');
+          }
+        });
+
+        const checkInDate = new Date(checkInInput.value);
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        if (checkInDate < now) {
+          checkInInput.classList.add('input-error');
+          errors.push("Check-in date cannot be in the past.");
+          isValid = false;
+        }
+
+        if (parseInt(roomCountInput.value) > maxAvailableRooms) {
+          roomCountInput.classList.add('input-error');
+          errors.push(`You can't book more than ${maxAvailableRooms} room(s).`);
+          isValid = false;
+        } else {
+          roomCountInput.classList.remove('input-error');
+        }
+
+        if (!isValid) {
+          errorContainer.innerHTML = errors.map(err => `<div class="error-text">${err}</div>`).join('');
+          return;
+        }
+
+        const formData = new FormData(bookingForm);
+        fetch('book.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+          })
+          .then(data => {
+            alert('Booking successful!');
+            console.log(data);
+            bookingForm.reset();
+            location.reload();
+          })
+          .catch(error => {
+            console.error('Booking failed:', error);
+            alert('Booking failed: ' + error.message);
+          });
+      });
     }
-  };
+  });
 </script>
 
 
