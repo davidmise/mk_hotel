@@ -115,7 +115,7 @@
                 <a href="#"><span class="icon-twitter"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
               </li>
             </ul>
 
@@ -398,22 +398,22 @@
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/parking.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/swimming.png" alt="Image" class="img-fluid">
                   </div>
                   <h3>Swimming Pool</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <p>Take a refreshing dip in our crystal-clear swimming pool — the perfect spot to unwind, soak up the sun, or enjoy a serene evening swim. Whether you’re here for leisure or business, our pool offers a tranquil escape from the day.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/internet.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/parking.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>High speed Internet access</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Free Parking</h3>
+                  <p>Enjoy the convenience of secure, complimentary parking throughout your stay. Whether you're arriving by car or rental, rest easy knowing your vehicle is safely accommodated just steps away from the hotel entrance.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
@@ -421,9 +421,9 @@
                   <div class="media-29191-icon">
                     <img src="images/svg/wifi.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>Complimentary WiFi in public areas</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Free WiFi</h3>
+                  <p>Stay connected with high-speed, complimentary WiFi available in all rooms and public areas. Whether you're catching up on work or streaming your favorite shows, we’ve got you covered with seamless internet access.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
@@ -433,8 +433,8 @@
                     <img src="images/svg/elevator.svg" alt="Image" class="img-fluid">
                   </div>
                   <h3>Elevators</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <p>Access every floor with ease using our modern, spacious elevators. Designed for comfort and accessibility, they ensure a smooth and convenient experience for all guests, including those with mobility needs.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
@@ -444,19 +444,19 @@
                     <img src="images/svg/partners.svg" alt="Image" class="img-fluid">
                   </div>
 
-                  <h3>Meeting rooms</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Conference rooms</h3>
+                  <p>Host your next meeting or event in our fully-equipped conference rooms. Featuring modern technology, flexible layouts, and professional ambiance, they’re perfect for business gatherings, workshops, or private functions.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/washing-machine.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/restaurantrestaurant.png" alt="Image" class="img-fluid">
                   </div>
-                  <h3>Laundry and Valet service</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3> Restaurant &amp; Bar</h3>
+                  <p>Indulge in delicious local and international cuisine at our on-site bar and restaurant. From gourmet meals to handcrafted cocktails, our culinary team delivers an exceptional dining experience morning to night.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
 
@@ -474,30 +474,30 @@
               <div class="col-md-4 section-heading" data-aos="fade-up">
                 <h3 class="text-left">News &amp; Events</h3>
                 <div class="w-75">
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
+                  <p>Stay updated with the latest news, special events, and highlights from MK Hotel. Discover what’s happening around our hotel and the experiences we create for our guests.</p>
                   </div>
                 <p><a href="#" class="readmore">All Posts</a></p>
               </div>
               <div class="col-md-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-                  <a href="#" class="thumb"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                  <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
-                    <h3><a href="#">How algorithms shape our world</a></h3>
-                    <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
-                    <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
-                    <p><a href="#" class="readmore">Read more</a></p>
-                  </div>
+                   <h3><a href="#">Unwind at the MK Hotel Bar</a></h3>
+                    <div class="date">June 5, 2025 &bullet; by <a href="#">MK Hotel Staff</a></div>
+                      <p>Whether you're wrapping up your day or starting the night, our stylish bar offers the perfect atmosphere to relax with handcrafted cocktails and a curated wine list.</p>
+                      <p><a href="#" class="readmore">Read more</a></p>
+                    </div>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
-                  <a href="#" class="thumb"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                  <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar2.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
-                    <h3><a href="#">How algorithms shape our world</a></h3>
-                    <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
-                    <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
-                    <p><a href="#" class="readmore">Read more</a></p>
+                    <h3><a href="#">Live Music Nights Are Back</a></h3>
+                      <div class="date">May 28, 2025 &bullet; by <a href="#">MK Hotel Events</a></div>
+                      <p>Join us every Friday for live music at MK Hotel. Enjoy great food, drinks, and entertainment in a vibrant setting that's perfect for friends, families, and travelers alike.</p>
+                      <p><a href="#" class="readmore">Read more</a></p>
                   </div>
                 </div>
               </div>
@@ -510,7 +510,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12 text-center">
-                <h3 class="m-0 p-0">If you have any special requests, please feel free to call us. <a href="tel://+123456789012">+12.345.678.9012</a></h3>
+                <h3 class="m-0 p-0">If you have any special requests, please feel free to call us. <a href="tel://++25575780001">+255 757 800 001</a></h3>
               </div>
             </div>
           </div>
@@ -524,7 +524,7 @@
           <div class="row">
             <div class="col-md-4 pr-md-5">
               <h3>About Us</h3>
-              <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
+              <p> This establishment provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
               <p><a href="#" class="readmore">Read more</a></p>
             </div>
             <div class="col-md-8 ml-auto">
@@ -533,24 +533,28 @@
                   <h3>Navigation</h3>
                   <ul class="list-unstyled">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Amenities</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
                 <div class="col-md-9 ml-auto">
                   <div class="row mb-3">
                     <div class="col-md-6">
                       <h3>Address</h3>
-                      <address>273 South Riverview Rd. <br> New York, NY 10011</address>
+                      
+                      <address>1007 Mwisenge, Musoma Urban, <br>Mara Tanzania</address>
                     </div>
                     <div class="col-md-6">
                       <h3>Telephone</h3>
                       <p>
-                        <a href="#">+1 234 5678 910</a> <br>
-                        <a href="#">+2 234 5678 910</a>
+                        <a href="#">+255 767 492 809</a> <br>
+                        <a href="#">+255 713 300 306</a> <br>
+                        <a href="#">+255 757 800 001</a> <br>
+                        <a href="#">+255 715 014 785</a>
+                        
                       </p>
                     </div>
                   </div>
@@ -572,7 +576,7 @@
             <div class="col-md-6 text-md-left">
               <!-- Link back to Untree.co can't be removed. Template is licensed under CC BY 3.0. If you purchased a license you can remove this. -->
               <p>
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="index.html">Untree.co</a>. All Rights Reserved. Design by <a href="https://untree.co/" target="_blank" class="text-primary">Untree.co</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="index.php">MK Hotel</a>. All Rights Reserved. Design by <a href="#" target="_blank" class="text-primary">Pamoja INC</a>
               </p>
             <!-- Link back to Untree.co can't be removed. Template is licensed under CC BY 3.0. If you purchased a license you can remove this. -->
             </div>
@@ -582,13 +586,13 @@
                 <a href="#"><span class="icon-facebook"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-twitter"></span></a>
+                <a href=""><span class="icon-twitter"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-tripadvisor"></span></a>
+                <a href=""><span class="icon-tripadvisor"></span></a>
               </li>
             </ul>
 
