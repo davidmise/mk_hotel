@@ -452,7 +452,7 @@
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/washing-machine.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/restaurantrestaurant.png" alt="Image" class="img-fluid">
                   </div>
                   <h3> Restaurant &amp; Bar</h3>
                   <p>Indulge in delicious local and international cuisine at our on-site bar and restaurant. From gourmet meals to handcrafted cocktails, our culinary team delivers an exceptional dining experience morning to night.</p>
@@ -524,7 +524,7 @@
           <div class="row">
             <div class="col-md-4 pr-md-5">
               <h3>About Us</h3>
-              <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
+              <p> This establishment provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
               <p><a href="#" class="readmore">Read more</a></p>
             </div>
             <div class="col-md-8 ml-auto">
