@@ -60,7 +60,7 @@
       <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
           <div class="logo-wrap">
-            <a href="index.html" class="untree_co--site-logo">MK Hotel</a>
+            <a href="index.php" class="untree_co--site-logo">MK Hotel</a>
           </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">
@@ -137,7 +137,7 @@
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                   <div class="site-hero-contents text-center" data-aos="fade-up">
-                    <h1 class="hero-heading">LuxuryHotel by Untree.co</h1>
+                    <h1 class="hero-heading"> MK Hotel </h1>
                     <div class="sub-text">
                       <p>Another free awesome templates for Hotels and any kind of website by <a href="https://untree.co/" target="_blank" class="text-white font-weight-bold">Untree.co</a>. See our <a href="https://untree.co/license/" class="text-white font-weight-bold">license page</a> for more usage details</p>
                     </div>
