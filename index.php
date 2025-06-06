@@ -60,7 +60,9 @@
       <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
           <div class="logo-wrap">
-            <a href="index.php" class="untree_co--site-logo">MK Hotel</a>
+            <a href="index.php" class="untree_co--site-logo">
+              MK Hotel
+            </a>
           </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">
@@ -104,20 +106,10 @@
           </div>
           <div class="icons-wrap text-md-right">
 
-            <ul class="icons-top d-none d-lg-block">
-              <li class="mr-4">
-                <a href="#" class="js-search-toggle"><span class="icon-search2"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="icon-facebook"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="icon-twitter"></span></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
-              </li>
-            </ul>
+                   <button id="openModalBtn" class=" btn  btn-dark rounded">Book Now</button>
+                   <!-- <button class="btn btn-dark">Black Button</button> -->
+
+
 
             <!-- Mobile Toggle -->
             <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
@@ -196,26 +188,25 @@
             <div class="row justify-content-center text-center">  
             <!-- Trigger Button -->
           <!-- Trigger Button -->
-        <button id="openModalBtn" class="book-btn">Book Now</button>
 
         <!-- Modal Structure -->
         <div id="bookingModal" class="modal">
           <div class="modal-content">
             <span class="close-btn">&times;</span>
      <!-- <h2>Add Room</h2> -->
-<h2>Book a Room</h2>
-<form id="bookingForm" action="book.php" method="POST" class="booking-form">
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Your Name" required>
-  </div>
+    <h2>Book a Room</h2>
+    <form id="bookingForm" action="book.php" method="POST" class="booking-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
 
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Email Address" required>
-  </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
 
-  <div class="form-group">
-  <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9+ ]{6,15}">
-</div>
+      <div class="form-group">
+      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9+ ]{6,15}">
+    </div>
 
   <div class="form-group">
     <label>Check-in:</label>
@@ -244,92 +235,14 @@
   <button type="submit" class="book-btn">Submit</button>
 </form>
 
-<script>
-  document.getElementById('room_type_id').addEventListener('change', function () {
-    const roomTypeId = this.value;
-    const availabilityText = document.getElementById('availability');
-    const roomCountInput = document.getElementById('number_of_rooms');
-    const roomCountGroup = document.getElementById('room-count-group');
-
-    if (!roomTypeId) {
-      availabilityText.textContent = '';
-      roomCountGroup.style.display = 'none';
-      return;
-    }
-
-    fetch('get_room_availability.php?room_type_id=' + roomTypeId)
-      .then(response => response.json())
-      .then(data => {
-        if (data.total_rooms > 0) {
-          availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
-          roomCountInput.max = data.total_rooms;
-          roomCountInput.value = 1;
-          roomCountGroup.style.display = 'block';
-        } else {
-          availabilityText.textContent = 'No rooms available.';
-          roomCountGroup.style.display = 'none';
-        }
-      });
-  });
-</script>
-
 
           </div>
         </div>
 
             </div>
           </div>
-          <script>
-  const modal = document.getElementById("bookingModal");
-  const openBtn = document.getElementById("openModalBtn");
-  const closeBtn = document.querySelector(".close-btn");
-
-  openBtn.onclick = () => {
-    modal.style.display = "block";
-  };
-
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-</script>
-
 
 <!-- ajax fotrm -->
-
-<script>
-  document.getElementById('bookingForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    fetch('book.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.text(); // or .json() if your PHP returns JSON
-    })
-    .then(data => {
-      alert('Booking successful!');
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('Booking failed:', error);
-      alert('Booking failed: ' + error);
-    });
-  });
-
-</script>
 
 <!-- booking end -->
           <div class="container-fluid pt-5">
@@ -465,9 +378,6 @@
         </div>
         
 
-        
-        
-
         <div class="untree_co--site-section">
           <div class="container">
             <div class="row">
@@ -525,7 +435,8 @@
             <div class="col-md-4 pr-md-5">
               <h3>About Us</h3>
               <p> This establishment provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-              <p><a href="#" class="readmore">Read more</a></p>
+              <p><a href="#" class="readmore"><img src="images/mk_hotel/logo/mk_text.png" class="img-fluid" height="500" alt="MK Logo"></a></p>
+              
             </div>
             <div class="col-md-8 ml-auto">
               <div class="row">
@@ -641,5 +552,84 @@
 
 
     <script src="js/main.js"></script>
+
+      <script>
+        document.getElementById('room_type_id').addEventListener('change', function () {
+          const roomTypeId = this.value;
+          const availabilityText = document.getElementById('availability');
+          const roomCountInput = document.getElementById('number_of_rooms');
+          const roomCountGroup = document.getElementById('room-count-group');
+
+          if (!roomTypeId) {
+            availabilityText.textContent = '';
+            roomCountGroup.style.display = 'none';
+            return;
+          }
+
+          fetch('get_room_availability.php?room_type_id=' + roomTypeId)
+            .then(response => response.json())
+            .then(data => {
+              if (data.total_rooms > 0) {
+                availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
+                roomCountInput.max = data.total_rooms;
+                roomCountInput.value = 1;
+                roomCountGroup.style.display = 'block';
+              } else {
+                availabilityText.textContent = 'No rooms available.';
+                roomCountGroup.style.display = 'none';
+              }
+            });
+        });
+      </script>
+
+      <script>
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+
+          fetch('book.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // or .json() if your PHP returns JSON
+          })
+          .then(data => {
+            alert('Booking successful!');
+            console.log(data);
+          })
+          .catch(error => {
+            console.error('Booking failed:', error);
+            alert('Booking failed: ' + error);
+          });
+        });
+
+      </script>
+
+      <script>
+          const modal = document.getElementById("bookingModal");
+          const openBtn = document.getElementById("openModalBtn");
+          const closeBtn = document.querySelector(".close-btn");
+
+          openBtn.onclick = () => {
+            modal.style.display = "block";
+          };
+
+          closeBtn.onclick = () => {
+            modal.style.display = "none";
+          };
+
+          window.onclick = (event) => {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+      </script>
+
   </body>
 </html>

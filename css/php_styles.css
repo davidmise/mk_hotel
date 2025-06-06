@@ -61,7 +61,7 @@
   font-weight: 600;
 }
 
-.book-btn {
+/* .book-btn {
   background: #4a90e2;
   color: white;
   padding: 12px 20px;
@@ -70,7 +70,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.3s ease;
-}
+} */
 
 .book-btn:hover {
   background: #357ab8;
