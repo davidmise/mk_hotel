@@ -57,67 +57,82 @@
 
     <div class="untree_co--site-wrap">
 
-      <nav class="untree_co--site-nav js-sticky-nav">
-        <div class="container d-flex align-items-center">
-          <div class="logo-wrap">
-            <a href="index.php" class="untree_co--site-logo">
-              MK Hotel
-            </a>
-          </div>
-          <div class="site-nav-ul-wrap text-center d-none d-lg-block">
-            <ul class="site-nav-ul js-clone-nav">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li class="has-children">
-                <a href="rooms.html">Rooms</a>
-                <ul class="dropdown">
-                  <li class="has-childre">
-                    <a href="#">Executive Suite</a>
-                    <!-- <ul class="dropdown">
-                      <li>
-                        <a href="#">King Bedroom</a>
-                      </li>
-                      <li>
-                        <a href="#">Queen &amp; Double Bedroom</a>
-                      </li>
-                      <li>
-                        <a href="#">Le Voila Suite</a>
-                      </li>
-                    </ul> -->
-                  </li>
-                  <li>
-                    <a href="#">Twin Bedroom</a>
-                  </li>
-                  <li>
-                    <a href="#">Delux</a>
-                  </li>
-                   <li>
-                    <a href="#">Standard</a>
-                  </li>
-                    <li>
-                    <a href="#"> Mini Standard</a>
-                  </li>
-                </ul>
+<nav class="untree_co--site-nav js-sticky-nav">
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <a href="index.php" class="untree_co--site-logo d-flex align-items-center">
+        
+        <!-- Image logo for desktop only -->
+        <img src="images/mk_hotel/logo/mk_text.png" alt="MK Logo" class="d-none d-md-block" height="40">
+
+        <!-- Text logo for mobile only -->
+        <span class="d-block d-md-none h5 mb-0 ml-2 text-dark">MK Hotel</span>
+
+      </a>
+    </div>
+
+    <!-- Book Now button - center on mobile only -->
+    <div class="d-flex d-lg-none justify-content-center flex-grow-1">
+      <button id="openModalBtn" class=" btn btn-dark btn-sm mx-auto">Book Now</button>
+    </div>
+
+    <!-- Hamburger Icon - right on mobile -->
+    <div class="icons-wrap d-lg-none">
+      <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+
+    <!-- Full menu for desktop -->
+    <div class="site-nav-ul-wrap text-center d-none d-lg-block ms-auto">
+      <ul class="site-nav-ul js-clone-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li class="has-children">
+          <a href="rooms.html">Rooms</a>
+          <ul class="dropdown">
+            <li><a href="#">Executive Suite</a></li>
+            <li><a href="#">Twin Bedroom</a></li>
+            <li><a href="#">Delux</a></li>
+            <li><a href="#">Standard</a></li>
+            <li><a href="#">Mini Standard</a></li>
+          </ul>
+        </li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+       <!-- Only visible on desktop (nav expanded) -->
+        <li class="d-none d-lg-inline-block">
+          <button id="openModalBtn" class="btn btn-dark rounded">Book Now</button>
+        </li>
+      </ul>
+    </div>
+
+       <div class="icons-wrap text-md-right">
+
+            <ul class="icons-top d-none d-lg-block">
+
+              <li>
+                <a href="#"><span class="icon-facebook"></span></a>
               </li>
-              <li><a href="amenities.html">Amenities</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li>
+                <a href="#"><span class="icon-twitter"></span></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
+              </li>
             </ul>
-          </div>
-          <div class="icons-wrap text-md-right">
-
-                   <button id="openModalBtn" class=" btn  btn-dark rounded">Book Now</button>
-                   <!-- <button class="btn btn-dark">Black Button</button> -->
-
-
 
             <!-- Mobile Toggle -->
             <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
               <span></span>
             </a>
           </div>
-        </div>
-      </nav>
+  </div>
+</nav>
+
 
       <div class="untree_co--site-main">
         
@@ -232,7 +247,7 @@
     <input type="number" name="number_of_rooms" id="number_of_rooms" min="1" required>
   </div>
 
-  <button type="submit" class="book-btn">Submit</button>
+  <button type="submit" class="btn btn-dark">Submit</button>
 </form>
 
 
@@ -365,7 +380,7 @@
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/restaurantrestaurant.png" alt="Image" class="img-fluid">
+                    <img src="images/svg/restaurant.png" alt="Image" class="img-fluid">
                   </div>
                   <h3> Restaurant &amp; Bar</h3>
                   <p>Indulge in delicious local and international cuisine at our on-site bar and restaurant. From gourmet meals to handcrafted cocktails, our culinary team delivers an exceptional dining experience morning to night.</p>
@@ -515,21 +530,6 @@
     </div>
 
     <!-- Search -->
-    <div class="search-wrap">
-      <a href="#" class="close-search js-search-toggle">
-        <span>Close</span>
-      </a>
-      <div class="container">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-12">
-            <form action="#">
-              <input type="search" name="s" id="s" placeholder="Type a keyword and hit enter..."  autocomplete="false">
-            </form>    
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script src="js/vendor/popper.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>

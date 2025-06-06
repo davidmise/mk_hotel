@@ -72,6 +72,13 @@
   transition: background 0.3s ease;
 } */
 
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 60px; /* or any value larger than 40px for mobile */
+  }
+}
+
 .book-btn:hover {
   background: #357ab8;
 }

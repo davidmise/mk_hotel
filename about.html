@@ -58,9 +58,18 @@
 
           <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
-          <div class="logo-wrap">
-            <a href="index.php" class="untree_co--site-logo">MK Hotel</a>
-          </div>
+        <!-- Logo -->
+    <div class="logo-wrap">
+      <a href="index.php" class="untree_co--site-logo d-flex align-items-center">
+        
+        <!-- Image logo for desktop only -->
+        <img src="images/mk_hotel/logo/mk_text.png" alt="MK Logo" class="d-none d-md-block" height="40">
+
+        <!-- Text logo for mobile only -->
+        <span class="d-block d-md-none h5 mb-0 ml-2 text-dark">MK Hotel</span>
+
+      </a>
+    </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">
               <li class="active"><a href="index.php">Home</a></li>
@@ -104,9 +113,7 @@
           <div class="icons-wrap text-md-right">
 
             <ul class="icons-top d-none d-lg-block">
-              <li class="mr-4">
-                <a href="#" class="js-search-toggle"><span class="icon-search2"></span></a>
-              </li>
+
               <li>
                 <a href="#"><span class="icon-facebook"></span></a>
               </li>
@@ -187,14 +194,15 @@
             <div class="row justify-content-center">
               <div class="col-md-9">
                 <div class="row mb-5 align-items-center">
-                  <div class="col-md-5 mr-auto">
-                      <h2 class="display-4">Watch MK Hotel Video</h2>
-                  </div>
-                  <div class="col-md-7 ml-auto">
-                    <p>Step inside MK Hotel through our short video tour and discover the elegance, comfort, and attention to detail that define every corner of our property. From beautifully designed rooms to relaxing amenities, we’ve created an experience that feels like home — only better.</p>
+         <div class="col-md-5 mr-auto">
+  <h2 class="display-4">Our Commitment to Comfort</h2>
+</div>
+<div class="col-md-7 ml-auto">
+  <p>At MK Hotel, we believe that true luxury lies in the details. From the moment you arrive, every aspect of your stay is designed to provide unmatched comfort, calm, and convenience. Our elegant interiors, serene surroundings, and personalized services ensure a restful and memorable experience.</p>
 
-                    <p>Whether you're planning a weekend getaway, a business trip, or a special event, this video offers a glimpse into the unmatched service, peaceful ambiance, and luxurious touches that make MK Hotel the perfect destination.</p>
-                  </div>
+  <p>Whether you're here for relaxation, business, or celebration, our team is dedicated to making every moment seamless and special. Discover the warmth of genuine hospitality and the thoughtful touches that set MK Hotel apart.</p>
+</div>
+
 
                 </div>
               </div>
@@ -218,14 +226,15 @@
         </div>
 
       </main>
-      <footer class="untree_co--site-footer">
+ <footer class="untree_co--site-footer">
 
         <div class="container">
           <div class="row">
             <div class="col-md-4 pr-md-5">
               <h3>About Us</h3>
               <p> This establishment provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-              <p><a href="#" class="readmore">Read more</a></p>
+              <p><a href="#" class="readmore"><img src="images/mk_hotel/logo/mk_text.png" class="img-fluid" height="500" alt="MK Logo"></a></p>
+              
             </div>
             <div class="col-md-8 ml-auto">
               <div class="row">
@@ -303,20 +312,6 @@
       </footer>
     </div>
     <!-- Search -->
-    <div class="search-wrap">
-      <a href="#" class="close-search js-search-toggle">
-        <span>Close</span>
-      </a>
-      <div class="container">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-12">
-            <form action="#">
-              <input type="search" name="s" id="s" placeholder="Type a keyword and hit enter..."  autocomplete="false">
-            </form>    
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script src="js/vendor/popper.min.js"></script>
