@@ -132,14 +132,14 @@
 
         <div class="owl-carousel owl-hero">
 
-          <div class="untree_co--site-hero overlay" style="background-image: url('images/slider_2.jpg')">
+          <div class="untree_co--site-hero overlay" style="background-image: url('images/mk_hotel/up.jpg')">
             <div class="container">
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                   <div class="site-hero-contents text-center" data-aos="fade-up">
-                    <h1 class="hero-heading"> MK Hotel </h1>
+                    <h1 class="hero-heading"> Welcome to MK Hotel </h1>
                     <div class="sub-text">
-                      <p>Another free awesome templates for Hotels and any kind of website by <a href="https://untree.co/" target="_blank" class="text-white font-weight-bold">Untree.co</a>. See our <a href="https://untree.co/license/" class="text-white font-weight-bold">license page</a> for more usage details</p>
+                      <p>Experience comfort, elegance, and exceptional hospitality at MK Hotel — your perfect destination for business, leisure, or a relaxing escape. Let us make your stay unforgettable.</p>
                     </div>
                   </div>
                 </div>
@@ -147,24 +147,32 @@
             </div>
           </div>
 
-          <div class="untree_co--site-hero overlay"  style="background-image: url('images/slider_1.jpg')">
+          <div class="untree_co--site-hero overlay"  style="background-image: url('images/mk_hotel/vip.jpg')">
             <div class="container">
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
                   <div class="site-hero-contents text-center" data-aos="fade-up">
                     <h1 class="hero-heading">Enjoy Your Stay</h1>
+                    <div class="sub-text">
+                      <p>From executive suites to serene spaces, MK Hotel offers a wide range of amenities tailored to your comfort and relaxation.</p>
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="untree_co--site-hero overlay" style="background-image: url('images/room_1_a.jpg')">
+          <div class="untree_co--site-hero overlay" style="background-image: url('images/mk_hotel/recep.jpg')">
             <div class="container">
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-10">
                   <div class="site-hero-contents text-center" data-aos="fade-up">
                     <h1 class="hero-heading">Away from the Hustle and Bustle of City Life</h1>
+                    <div class="sub-text">
+                      <p>Let our dedicated staff provide you with the warm hospitality and exceptional care that makes every guest feel at home.</p>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -237,32 +245,32 @@
 </form>
 
 <script>
-document.getElementById('room_type_id').addEventListener('change', function () {
-  const roomTypeId = this.value;
-  const availabilityText = document.getElementById('availability');
-  const roomCountInput = document.getElementById('number_of_rooms');
-  const roomCountGroup = document.getElementById('room-count-group');
+  document.getElementById('room_type_id').addEventListener('change', function () {
+    const roomTypeId = this.value;
+    const availabilityText = document.getElementById('availability');
+    const roomCountInput = document.getElementById('number_of_rooms');
+    const roomCountGroup = document.getElementById('room-count-group');
 
-  if (!roomTypeId) {
-    availabilityText.textContent = '';
-    roomCountGroup.style.display = 'none';
-    return;
-  }
+    if (!roomTypeId) {
+      availabilityText.textContent = '';
+      roomCountGroup.style.display = 'none';
+      return;
+    }
 
-  fetch('get_room_availability.php?room_type_id=' + roomTypeId)
-    .then(response => response.json())
-    .then(data => {
-      if (data.total_rooms > 0) {
-        availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
-        roomCountInput.max = data.total_rooms;
-        roomCountInput.value = 1;
-        roomCountGroup.style.display = 'block';
-      } else {
-        availabilityText.textContent = 'No rooms available.';
-        roomCountGroup.style.display = 'none';
-      }
-    });
-});
+    fetch('get_room_availability.php?room_type_id=' + roomTypeId)
+      .then(response => response.json())
+      .then(data => {
+        if (data.total_rooms > 0) {
+          availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
+          roomCountInput.max = data.total_rooms;
+          roomCountInput.value = 1;
+          roomCountGroup.style.display = 'block';
+        } else {
+          availabilityText.textContent = 'No rooms available.';
+          roomCountGroup.style.display = 'none';
+        }
+      });
+  });
 </script>
 
 
@@ -295,31 +303,31 @@ document.getElementById('room_type_id').addEventListener('change', function () {
 <!-- ajax fotrm -->
 
 <script>
-document.getElementById('bookingForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  const form = e.target;
-  const formData = new FormData(form);
+    const form = e.target;
+    const formData = new FormData(form);
 
-  fetch('book.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.text(); // or .json() if your PHP returns JSON
-  })
-  .then(data => {
-    alert('Booking successful!');
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Booking failed:', error);
-    alert('Booking failed: ' + error);
+    fetch('book.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // or .json() if your PHP returns JSON
+    })
+    .then(data => {
+      alert('Booking successful!');
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Booking failed:', error);
+      alert('Booking failed: ' + error);
+    });
   });
-});
 
 </script>
 
@@ -331,19 +339,19 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
                 <div class="image-stack">
                   <div class="image-stack-item image-stack-item-top" data-jarallax-element="-50">
                     <div class="overlay"></div>
-                    <img src="images/room_1_a.jpg" alt="Image" class="img-fluid pic1">
+                    <img src="images/mk_hotel/VIP/vip.JPG" alt="Image" class="img-fluid pic1">
                   </div>
                   <div class="image-stack-item image-stack-item-bottom">
                     <div class="overlay"></div>
-                    <img src="images/room_1_b.jpg" alt="Image" class="img-fluid pic2">
+                    <img src="images/mk_hotel/VIP/vip.JPG" alt="Image" class="img-fluid pic2">
                   </div>
                 </div>
               </div> <!-- .suite -->
 
               <div class="suite-contents" data-jarallax-element="50">
-                <h2 class="suite-title">King Bedroom</h2>
+                <h2 class="suite-title">Executive Bedroom</h2>
                 <div class="suite-excerpt">
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality mattress in a small room to large suites with bigger.</p>
+                 <p>Experience the height of luxury in our Executive Suite — a spacious, elegantly furnished room designed for both relaxation and productivity. Enjoy premium amenities, a private lounge area, and breathtaking views, all tailored to make your stay extraordinary.</p>
                   <p><a href="#" class="readmore">Room Details</a></p>
                 </div>
               </div>
@@ -355,19 +363,19 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
                 <div class="image-stack">
                   <div class="image-stack-item image-stack-item-top">
                     <div class="overlay"></div>
-                    <img src="images/room_2_a.jpg" alt="Image" class="img-fluid pic1">
+                    <img src="images/mk_hotel/twin_bed/twin.JPG" alt="Image" class="img-fluid pic1">
                   </div>
                   <div class="image-stack-item image-stack-item-bottom" data-jarallax-element="-50">
                     <div class="overlay"></div>
-                    <img src="images/room_2_b.jpg" alt="Image" class="img-fluid pic2">
+                    <img src="images/mk_hotel/twin_bed/twin2.JPG" alt="Image" class="img-fluid pic2">
                   </div>
                 </div>
               </div>
 
               <div class="suite-contents" data-jarallax-element="50">
-                <h2 class="suite-title">Queen &amp; Double Bedroom</h2>
+                <h2 class="suite-title">Twin Bedroom</h2>
                 <div class="suite-excerpt pr-5">
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality mattress in a small room to large suites with bigger</p>
+                  <p>Perfect for friends or colleagues, our Twin Bedroom features two comfortable beds, modern finishes, and thoughtful touches to ensure a relaxing and convenient stay. Ideal for shared travel without sacrificing space or comfort.</p>
                   <p><a href="#" class="readmore">Room Details</a></p>
                 </div>
               </div>
@@ -392,7 +400,7 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
                   <div class="media-29191-icon">
                     <img src="images/svg/parking.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>Free Self-Parking</h3>
+                  <h3>Swimming Pool</h3>
                   <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
                   <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
                 </div>
