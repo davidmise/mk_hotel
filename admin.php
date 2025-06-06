@@ -3,6 +3,13 @@ include 'db.php';
 
 session_start();
 
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
+
 // Handle update form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
     $booking_id = (int)$_POST['booking_id'];
