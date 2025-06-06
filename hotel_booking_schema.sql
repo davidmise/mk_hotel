@@ -39,3 +39,14 @@ CREATE TABLE IF NOT EXISTS bookings (
     FOREIGN KEY (room_type_id) REFERENCES rooms(id) ON DELETE CASCADE,
     FOREIGN KEY (updated_by) REFERENCES admins(id) ON DELETE SET NULL
 );
+
+-- Create the 'bookings' table
+CREATE TABLE contacts (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  subject VARCHAR(255),
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);

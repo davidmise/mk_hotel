@@ -1,6 +1,8 @@
 <?php
 include 'db.php';
 
+session_start();
+
 // Handle update form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
     $booking_id = (int)$_POST['booking_id'];
@@ -202,9 +204,19 @@ $result_contacts = $conn->query($query_contacts);
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                              <?php 
+                              if (isset($_SESSION['user']['username'])) {
+                                    $username = $_SESSION['user']['username'];
+                                      $user = htmlspecialchars($username);
+                                      echo "Logged in as: " . $user;  
+                                  } else {
+                                      echo "User not logged in.";
+                                  }
+                              ?> 
+                            </span>
                             <img class="img-profile rounded-circle"
-                                src="img/undraw_profile.svg">
+                                src="admin/img/undraw_profile.svg">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -475,7 +487,7 @@ $result_contacts = $conn->query($query_contacts);
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
