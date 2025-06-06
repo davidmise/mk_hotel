@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit();
 }
-?>
+
 
 // Handle update form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
