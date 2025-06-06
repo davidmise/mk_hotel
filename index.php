@@ -115,7 +115,7 @@
                 <a href="#"><span class="icon-twitter"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
               </li>
             </ul>
 
@@ -474,7 +474,7 @@
               <div class="col-md-4 section-heading" data-aos="fade-up">
                 <h3 class="text-left">News &amp; Events</h3>
                 <div class="w-75">
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
+                  <p>Stay updated with the latest news, special events, and highlights from MK Hotel. Discover what’s happening around our hotel and the experiences we create for our guests.</p>
                   </div>
                 <p><a href="#" class="readmore">All Posts</a></p>
               </div>
@@ -482,11 +482,11 @@
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
                   <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
-                    <h3><a href="#">How algorithms shape our world</a></h3>
-                    <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
-                    <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
-                    <p><a href="#" class="readmore">Read more</a></p>
-                  </div>
+                   <h3><a href="#">Unwind at the MK Hotel Bar</a></h3>
+                    <div class="date">June 5, 2025 &bullet; by <a href="#">MK Hotel Staff</a></div>
+                      <p>Whether you're wrapping up your day or starting the night, our stylish bar offers the perfect atmosphere to relax with handcrafted cocktails and a curated wine list.</p>
+                      <p><a href="#" class="readmore">Read more</a></p>
+                    </div>
                 </div>
               </div>
 
@@ -494,10 +494,10 @@
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
                   <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar2.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
-                    <h3><a href="#">How algorithms shape our world</a></h3>
-                    <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
-                    <p>A hotel is an establishment that provides paid lodging on a short-term basis.</p>
-                    <p><a href="#" class="readmore">Read more</a></p>
+                    <h3><a href="#">Live Music Nights Are Back</a></h3>
+                      <div class="date">May 28, 2025 &bullet; by <a href="#">MK Hotel Events</a></div>
+                      <p>Join us every Friday for live music at MK Hotel. Enjoy great food, drinks, and entertainment in a vibrant setting that's perfect for friends, families, and travelers alike.</p>
+                      <p><a href="#" class="readmore">Read more</a></p>
                   </div>
                 </div>
               </div>
@@ -510,7 +510,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12 text-center">
-                <h3 class="m-0 p-0">If you have any special requests, please feel free to call us. <a href="tel://+123456789012">+12.345.678.9012</a></h3>
+                <h3 class="m-0 p-0">If you have any special requests, please feel free to call us. <a href="tel://++25575780001">+255 757 800 001</a></h3>
               </div>
             </div>
           </div>
@@ -533,24 +533,28 @@
                   <h3>Navigation</h3>
                   <ul class="list-unstyled">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Amenities</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
                 <div class="col-md-9 ml-auto">
                   <div class="row mb-3">
                     <div class="col-md-6">
                       <h3>Address</h3>
-                      <address>273 South Riverview Rd. <br> New York, NY 10011</address>
+                      
+                      <address>1007 Mwisenge, Musoma Urban, <br>Mara Tanzania</address>
                     </div>
                     <div class="col-md-6">
                       <h3>Telephone</h3>
                       <p>
-                        <a href="#">+1 234 5678 910</a> <br>
-                        <a href="#">+2 234 5678 910</a>
+                        <a href="#">+255 767 492 809</a> <br>
+                        <a href="#">+255 713 300 306</a> <br>
+                        <a href="#">+255 757 800 001</a> <br>
+                        <a href="#">+255 715 014 785</a>
+                        
                       </p>
                     </div>
                   </div>
@@ -572,7 +576,7 @@
             <div class="col-md-6 text-md-left">
               <!-- Link back to Untree.co can't be removed. Template is licensed under CC BY 3.0. If you purchased a license you can remove this. -->
               <p>
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="index.html">Untree.co</a>. All Rights Reserved. Design by <a href="https://untree.co/" target="_blank" class="text-primary">Untree.co</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="index.php">MK Hotel</a>. All Rights Reserved. Design by <a href="#" target="_blank" class="text-primary">Pamoja INC</a>
               </p>
             <!-- Link back to Untree.co can't be removed. Template is licensed under CC BY 3.0. If you purchased a license you can remove this. -->
             </div>
@@ -582,13 +586,13 @@
                 <a href="#"><span class="icon-facebook"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-twitter"></span></a>
+                <a href=""><span class="icon-twitter"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="https://www.instagram.com/mkhotel_ltd?igsh=bXc3NGZyaDRqMHN0"><span class="icon-instagram"></span></a>
               </li>
               <li>
-                <a href="#"><span class="icon-tripadvisor"></span></a>
+                <a href=""><span class="icon-tripadvisor"></span></a>
               </li>
             </ul>
 
