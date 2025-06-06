@@ -398,22 +398,22 @@
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/parking.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/swimming.png" alt="Image" class="img-fluid">
                   </div>
                   <h3>Swimming Pool</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <p>Take a refreshing dip in our crystal-clear swimming pool — the perfect spot to unwind, soak up the sun, or enjoy a serene evening swim. Whether you’re here for leisure or business, our pool offers a tranquil escape from the day.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
                 <div class="media-29191 text-center h-100">
                   <div class="media-29191-icon">
-                    <img src="images/svg/internet.svg" alt="Image" class="img-fluid">
+                    <img src="images/svg/parking.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>High speed Internet access</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Free Parking</h3>
+                  <p>Enjoy the convenience of secure, complimentary parking throughout your stay. Whether you're arriving by car or rental, rest easy knowing your vehicle is safely accommodated just steps away from the hotel entrance.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
@@ -421,9 +421,9 @@
                   <div class="media-29191-icon">
                     <img src="images/svg/wifi.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>Complimentary WiFi in public areas</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Free WiFi</h3>
+                  <p>Stay connected with high-speed, complimentary WiFi available in all rooms and public areas. Whether you're catching up on work or streaming your favorite shows, we’ve got you covered with seamless internet access.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
@@ -433,8 +433,8 @@
                     <img src="images/svg/elevator.svg" alt="Image" class="img-fluid">
                   </div>
                   <h3>Elevators</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <p>Access every floor with ease using our modern, spacious elevators. Designed for comfort and accessibility, they ensure a smooth and convenient experience for all guests, including those with mobility needs.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               
@@ -444,9 +444,9 @@
                     <img src="images/svg/partners.svg" alt="Image" class="img-fluid">
                   </div>
 
-                  <h3>Meeting rooms</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3>Conference rooms</h3>
+                  <p>Host your next meeting or event in our fully-equipped conference rooms. Featuring modern technology, flexible layouts, and professional ambiance, they’re perfect for business gatherings, workshops, or private functions.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
@@ -454,9 +454,9 @@
                   <div class="media-29191-icon">
                     <img src="images/svg/washing-machine.svg" alt="Image" class="img-fluid">
                   </div>
-                  <h3>Laundry and Valet service</h3>
-                  <p>A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality.</p>
-                  <p><p><a href="#" class="readmore reverse">Read More</a></p></p>
+                  <h3> Restaurant &amp; Bar</h3>
+                  <p>Indulge in delicious local and international cuisine at our on-site bar and restaurant. From gourmet meals to handcrafted cocktails, our culinary team delivers an exceptional dining experience morning to night.</p>
+                  <p><p><a href="amenities.html" class="readmore reverse">Read More</a></p></p>
                 </div>
               </div>
 
@@ -480,7 +480,7 @@
               </div>
               <div class="col-md-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-                  <a href="#" class="thumb"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                  <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
                     <h3><a href="#">How algorithms shape our world</a></h3>
                     <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
@@ -492,7 +492,7 @@
 
               <div class="col-md-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
-                  <a href="#" class="thumb"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                  <a href="#" class="thumb"><img src="images/mk_hotel/BAR/bar2.JPG" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
                     <h3><a href="#">How algorithms shape our world</a></h3>
                     <div class="date">December 20, 2019 &bullet; by <a href="#">Joefrey Mahusay</a></div>
