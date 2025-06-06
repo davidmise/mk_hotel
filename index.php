@@ -4,6 +4,7 @@
 * Tempalte URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
+<?php include 'model.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -182,6 +183,7 @@
             </div>
           </div>
 <!-- booking start -->
+
       <div class="container pt-0 pb-5">
             <div class="row justify-content-center text-center">  
             <!-- Trigger Button -->
@@ -192,32 +194,78 @@
         <div id="bookingModal" class="modal">
           <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>Book a Room</h2>
-            <form id="bookingForm" action="book.php" method="POST" class="booking-form">
-              <div class="form-group">
-                <input type="text" name="name" placeholder="Your name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Email" required>
-              </div>
-              <div class="form-group">
-                <label>Check-in:</label>
-                <input type="date" name="check_in" required>
-              </div>
-              <div class="form-group">
-                <label>Check-out:</label>
-                <input type="date" name="check_out" required>
-              </div>
-              <div class="form-group">
-                <label>Room Type:</label>
-                <select name="room_type" required>
-                  <option value="single">Single</option>
-                  <option value="double">Double</option>
-                  <option value="suite">Suite</option>
-                </select>
-              </div>
-              <button type="submit" class="book-btn">Submit</button>
-            </form>
+     <!-- <h2>Add Room</h2> -->
+<h2>Book a Room</h2>
+<form id="bookingForm" action="book.php" method="POST" class="booking-form">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Email Address" required>
+  </div>
+
+  <div class="form-group">
+  <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9+ ]{6,15}">
+</div>
+
+  <div class="form-group">
+    <label>Check-in:</label>
+    <input type="datetime-local" name="check_in" required>
+  </div>
+
+  <div class="form-group">
+    <label>Check-out:</label>
+    <input type="datetime-local" name="check_out" required>
+  </div>
+
+  <div class="form-group">
+    <label>Room Type:</label>
+    <select name="room_type_id" id="room_type_id" required>
+      <option value="">Select a Room</option>
+      <?php echo getAllRooms($conn); ?>
+    </select>
+    <p id="availability" style="margin-top: 5px; color: green;"></p>
+  </div>
+
+  <div class="form-group" id="room-count-group" style="display: none;">
+    <label>Number of Rooms:</label>
+    <input type="number" name="number_of_rooms" id="number_of_rooms" min="1" required>
+  </div>
+
+  <button type="submit" class="book-btn">Submit</button>
+</form>
+
+<script>
+document.getElementById('room_type_id').addEventListener('change', function () {
+  const roomTypeId = this.value;
+  const availabilityText = document.getElementById('availability');
+  const roomCountInput = document.getElementById('number_of_rooms');
+  const roomCountGroup = document.getElementById('room-count-group');
+
+  if (!roomTypeId) {
+    availabilityText.textContent = '';
+    roomCountGroup.style.display = 'none';
+    return;
+  }
+
+  fetch('get_room_availability.php?room_type_id=' + roomTypeId)
+    .then(response => response.json())
+    .then(data => {
+      if (data.total_rooms > 0) {
+        availabilityText.textContent = 'Available: ' + data.total_rooms + ' rooms';
+        roomCountInput.max = data.total_rooms;
+        roomCountInput.value = 1;
+        roomCountGroup.style.display = 'block';
+      } else {
+        availabilityText.textContent = 'No rooms available.';
+        roomCountGroup.style.display = 'none';
+      }
+    });
+});
+</script>
+
+
           </div>
         </div>
 
@@ -247,30 +295,32 @@
 <!-- ajax fotrm -->
 
 <script>
-  document.getElementById('bookingForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+  const form = e.target;
+  const formData = new FormData(form);
 
-    fetch(form.action, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) throw new Error("Network response was not ok");
-      return response.text(); // or response.json() if you return JSON
-    })
-    .then(data => {
-      alert("✅ Booking successful!");
-      form.reset();
-      document.getElementById("bookingModal").style.display = "none";
-    })
-    .catch(error => {
-      console.error("Booking failed:", error);
-      alert("❌ Booking failed. Please try again.");
-    });
+  fetch('book.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text(); // or .json() if your PHP returns JSON
+  })
+  .then(data => {
+    alert('Booking successful!');
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Booking failed:', error);
+    alert('Booking failed: ' + error);
   });
+});
+
 </script>
 
 <!-- booking end -->
