@@ -38,6 +38,10 @@ $query = "
 
 
 $result = $conn->query($query);
+
+
+$query_contacts = "SELECT * FROM contacts ORDER BY created_at DESC";
+$result_contacts = $conn->query($query_contacts);
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +102,31 @@ $result = $conn->query($query);
           <td><?= $row['created_at'] ?></td>
           <td><input type="submit" name="update_payment" value="Update"></td>
         </form>
+      </tr>
+    <?php endwhile; ?>
+  </table>
+
+
+  <br>
+  <br>
+   <h2>Contact Messages</h2>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Received At</th>
+    </tr>
+    <?php while ($row = $result_contacts->fetch_assoc()): ?>
+      <tr>
+        <td><?= $row['id'] ?></td>
+        <td><?= htmlspecialchars($row['name']) ?></td>
+        <td><?= htmlspecialchars($row['email']) ?></td>
+        <td><?= htmlspecialchars($row['subject']) ?></td>
+        <td><?= nl2br(htmlspecialchars($row['message'])) ?></td>
+        <td><?= $row['created_at'] ?></td>
       </tr>
     <?php endwhile; ?>
   </table>
