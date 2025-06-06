@@ -368,7 +368,7 @@ $result_contacts = $conn->query($query_contacts);
                                       <td><?= $no++ ?></td> <!-- Serial number column -->
 
                                       <td><?= htmlspecialchars($row['name']) ?></td>
-                                      <td><?= htmlspecialchars($row['email']) ?></td>
+                                      <td><?= !empty($row['email']) ? htmlspecialchars($row['email']) : 'N/A' ?></td>
                                       <td><?= !empty($row['phone']) ? htmlspecialchars($row['phone']) : 'N/A' ?></td>
                                       <td><?= $row['check_in'] ?></td>
                                       <td><?= $row['check_out'] ?></td>

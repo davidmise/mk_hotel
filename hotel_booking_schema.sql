@@ -20,11 +20,11 @@ CREATE TABLE IF NOT EXISTS rooms (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create the 'bookings' table
+-- Create the 'bookings' table with 'email' as NULLABLE
 CREATE TABLE IF NOT EXISTS bookings (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100), -- Made nullable by removing NOT NULL
     phone VARCHAR(20),
     check_in DATETIME NOT NULL,
     check_out DATETIME NOT NULL,

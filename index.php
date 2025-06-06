@@ -105,7 +105,7 @@
         <li><a href="contact.html">Contact</a></li>
        <!-- Only visible on desktop (nav expanded) -->
         <li class="d-none d-lg-inline-block">
-          <button id="openModalBtn" class="btn btn-dark rounded">Book Now</button>
+          <button id="openModalBtn2" class="btn btn-dark rounded">Book Now</button>
         </li>
       </ul>
     </div>
@@ -216,7 +216,7 @@
       </div>
 
       <div class="form-group">
-        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="email" name="email" placeholder="Email Address" >
       </div>
 
       <div class="form-group">
@@ -550,6 +550,8 @@
     <script src="js/vendor/scrollmagic.animation.gsap.min.js"></script>
     <script src="js/vendor/debug.addIndicators.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <script src="js/main.js"></script>
 
@@ -582,54 +584,78 @@
         });
       </script>
 
-      <script>
-        document.getElementById('bookingForm').addEventListener('submit', function (e) {
-          e.preventDefault();
+ <script>
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-          const form = e.target;
-          const formData = new FormData(form);
+    const form = e.target;
+    const formData = new FormData(form);
 
-          fetch('book.php', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // or .json() if your PHP returns JSON
-          })
-          .then(data => {
-            alert('Booking successful!');
-            console.log(data);
-          })
-          .catch(error => {
-            console.error('Booking failed:', error);
-            alert('Booking failed: ' + error);
-          });
-        });
+    fetch('book.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // or .json() if your PHP returns JSON
+    })
+  .then(data => {
 
-      </script>
+  alert('Booking successful!');
+      console.log(data);
 
-      <script>
-          const modal = document.getElementById("bookingModal");
-          const openBtn = document.getElementById("openModalBtn");
-          const closeBtn = document.querySelector(".close-btn");
+      form.reset(); // Optional: reset form
+      
+      location.href = location.href; // Forces a full reload
 
-          openBtn.onclick = () => {
-            modal.style.display = "block";
-          };
+    })
 
-          closeBtn.onclick = () => {
-            modal.style.display = "none";
-          };
+        .catch(error => {
+      console.error('Booking failed:', error);
+      alert('Booking failed: ' + error);
+    });
+  });
+</script>
 
-          window.onclick = (event) => {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          };
-      </script>
+
+     <script>
+  const modal = document.getElementById("bookingModal");
+  const openBtn = document.getElementById("openModalBtn");   // Desktop button
+  const openBtn2 = document.getElementById("openModalBtn2"); // Mobile button
+  const closeBtn = document.querySelector(".close-btn");
+
+  // Function to open modal
+  const openModal = () => {
+    modal.style.display = "block";
+  };
+
+  // Attach to desktop button if it exists
+  if (openBtn) {
+    openBtn.onclick = openModal;
+  }
+
+  // Attach to mobile button if it exists
+  if (openBtn2) {
+    openBtn2.onclick = openModal;
+  }
+
+  // Close modal when clicking close button
+  if (closeBtn) {
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  }
+
+  // Close modal when clicking outside of it
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
 
   </body>
 </html>
