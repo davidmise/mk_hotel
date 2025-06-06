@@ -75,7 +75,7 @@ $result = $conn->query($query);
           <input type="hidden" name="booking_id" value="<?= $row['id'] ?>">
           <td><?= htmlspecialchars($row['name']) ?></td>
           <td><?= htmlspecialchars($row['email']) ?></td>
-          <td><?= trim($row['phone']) !== '' ? htmlspecialchars($row['phone']) : 'N/A' ?></td>
+          <td><?= !empty($row['phone']) ? htmlspecialchars($row['phone']) : 'N/A' ?></td>
           <td><?= $row['check_in'] ?></td>
           <td><?= $row['check_out'] ?></td>
           <td><?= htmlspecialchars($row['room_name']) ?></td>
