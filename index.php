@@ -659,7 +659,7 @@
             roomCountInput.value = 1;
             roomCountGroup.style.display = 'block';
           } else {
-            availabilityText.innerHTML = `<span class="error-text">No rooms available.</span>`;
+            availabilityText.innerHTML = `<span class="error-text">No rooms available for selected dates.</span>`;
             roomCountGroup.style.display = 'none';
           }
         })
