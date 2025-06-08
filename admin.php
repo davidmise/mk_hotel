@@ -1,67 +1,69 @@
 <?php
-include 'db.php';
+  include 'db.php';
 
-session_start();
+  session_start();
 
-// Redirect to login page if user is not logged in
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
-}
+  // Redirect to login page if user is not logged in
+  if (!isset($_SESSION['user'])) {
+      header('Location: login.php');
+      exit();
+  }
 
 
-// Handle update form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
-    $booking_id = (int)$_POST['booking_id'];
-    $payment_status = $_POST['payment_status'] ?? 'Unpaid';
-    $payment_method = $_POST['payment_method'] ?? NULL;
+  // Handle update form submission
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
+      $booking_id = (int)$_POST['booking_id'];
+      $payment_status = $_POST['payment_status'] ?? 'Unpaid';
+      $payment_method = $_POST['payment_method'] ?? NULL;
+      $booking_status = $_POST['booking_status'] ?? 'pending';
 
-    $stmt = $conn->prepare("UPDATE bookings SET payment_status = ?, payment_method = ? WHERE id = ?");
-    $stmt->bind_param("ssi", $payment_status, $payment_method, $booking_id);
-    $stmt->execute();
-    $stmt->close();
+      $stmt = $conn->prepare("UPDATE bookings SET payment_status = ?, payment_method = ? WHERE id = ?");
+      $stmt->bind_param("ssi", $payment_status, $payment_method, $booking_id);
+      $stmt->execute();
+      $stmt->close();
 
-    header("Location: admin.php");
-    exit;
-}
+      header("Location: admin.php");
+      exit;
+  }
 
-// ------------------
-// FILTER HANDLING (created_at based)
-// ------------------
-$startDate = $_GET['start_date'] ?? '';
-$endDate = $_GET['end_date'] ?? '';
-$filterBy = $_GET['filter_by'] ?? 'checkin'; // default to checkin if not selected
+  // ------------------
+  // FILTER HANDLING (created_at based)
+  // ------------------
+  $startDate = $_GET['start_date'] ?? '';
+  $endDate = $_GET['end_date'] ?? '';
+  $filterBy = $_GET['filter_by'] ?? 'checkin'; // default to checkin if not selected
 
-$sql = "SELECT b.*, r.type AS room_name, r.price 
-        FROM bookings b 
-        JOIN rooms r ON b.room_type_id = r.id 
-        WHERE 1";
+  $sql = "SELECT b.*, r.type AS room_name, r.price, c.name, c.email, c.phone 
+          FROM bookings b 
+          JOIN rooms r ON b.room_type_id = r.id 
+          JOIN customers c ON b.customer_id = c.id 
+          WHERE 1";
 
-// Date filtering
-if ($filterBy === 'checkin') {
-    if (!empty($startDate)) {
-        $sql .= " AND DATE(b.check_in) >= '$startDate'";
-    }
-    if (!empty($endDate)) {
-        $sql .= " AND DATE(b.check_out) <= '$endDate'";
-    }
-} elseif ($filterBy === 'created') {
-    if (!empty($startDate)) {
-        $sql .= " AND DATE(b.created_at) >= '$startDate'";
-    }
-    if (!empty($endDate)) {
-        $sql .= " AND DATE(b.created_at) <= '$endDate'";
-    }
-}
+  // Date filtering
+  if ($filterBy === 'checkin') {
+      if (!empty($startDate)) {
+          $sql .= " AND DATE(b.check_in) >= '$startDate'";
+      }
+      if (!empty($endDate)) {
+          $sql .= " AND DATE(b.check_out) <= '$endDate'";
+      }
+  } elseif ($filterBy === 'created') {
+      if (!empty($startDate)) {
+          $sql .= " AND DATE(b.created_at) >= '$startDate'";
+      }
+      if (!empty($endDate)) {
+          $sql .= " AND DATE(b.created_at) <= '$endDate'";
+      }
+  }
 
-$sql .= " ORDER BY b.created_at DESC";
-$result = $conn->query($sql);
+  $sql .= " ORDER BY b.created_at DESC";
+  $result = $conn->query($sql);
 
-// ------------------
-// FETCH CONTACT MESSAGES
-// ------------------
-$query_contacts = "SELECT * FROM contacts ORDER BY created_at DESC";
-$result_contacts = $conn->query($query_contacts);
+  // ------------------
+  // FETCH CONTACT MESSAGES
+  // ------------------
+  $query_contacts = "SELECT * FROM contacts ORDER BY created_at DESC";
+  $result_contacts = $conn->query($query_contacts);
 ?>
 
 
@@ -335,6 +337,7 @@ $result_contacts = $conn->query($query_contacts);
                                         <th>Payment Method</th>
                                         <th>Price (TZS)</th>
                                         <th>Booked At</th>
+                                        <th>Booking Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -352,6 +355,7 @@ $result_contacts = $conn->query($query_contacts);
                                         <th>Payment Method</th>
                                         <th>Price (TZS)</th>
                                         <th>Booked At</th>
+                                        <th>Booking Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
@@ -378,18 +382,27 @@ $result_contacts = $conn->query($query_contacts);
                                         <select name="payment_status" class="form-control">
                                           <option value="Unpaid" <?= $row['payment_status'] === 'Unpaid' ? 'selected' : '' ?>>Unpaid</option>
                                           <option value="Paid" <?= $row['payment_status'] === 'Paid' ? 'selected' : '' ?>>Paid</option>
+                                          <option value="Partial" <?= $row['payment_status'] === 'Partial' ? 'selected' : '' ?>>Partial</option>
                                         </select>
                                       </td>
                                       <td>
-                                        <select name="payment_method" class="form-control">
-                                          <option value="" <?= empty($row['payment_method']) ? 'selected' : '' ?>>-- Select --</option>
-                                          <option value="Cash" <?= $row['payment_method'] === 'Cash' ? 'selected' : '' ?>>Cash</option>
-                                          <option value="Card" <?= $row['payment_method'] === 'Card' ? 'selected' : '' ?>>Card</option>
-                                          <option value="Mobile Money" <?= $row['payment_method'] === 'Mobile Money' ? 'selected' : '' ?>>Mobile Money</option>
-                                        </select>
+                                      <select name="payment_method" class="form-control">
+                                        <option value="" <?= empty($row['payment_method']) ? 'selected' : '' ?>>-- Select --</option>
+                                        <option value="cash" <?= $row['payment_method'] === 'cash' ? 'selected' : '' ?>>Cash</option>
+                                        <option value="Mobile Money" <?= $row['payment_method'] === 'Mobile Money' ? 'selected' : '' ?>>Mobile Money</option>
+                                        <option value="bank" <?= $row['payment_method'] === 'bank' ? 'selected' : '' ?>>Bank</option>
+                                      </select>
+
                                       </td>
                                       <td><?= number_format((int)$row['price'] * (int)$row['number_of_rooms']) ?></td>
                                       <td><?= $row['created_at'] ?></td>
+                                      <td>
+                                        <select name="booking_status" class="form-control">
+                                          <option value="pending" <?= $row['status'] === 'pending' ? 'selected' : '' ?>>Pending</option>
+                                          <option value="confirmed" <?= $row['status'] === 'confirmed' ? 'selected' : '' ?>>Confirmed</option>
+                                          <option value="cancelled" <?= $row['status'] === 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                                        </select>
+                                      </td>
                                       <td><input class="btn btn-primary" type="submit" name="update_payment" value="Update"></td>
                                     </form>
                                   </tr>

@@ -1,6 +1,7 @@
 <?php
 // get_room_availability.php
 include 'model.php';
+header('Content-Type: application/json');
 
 $room_type_id = $_GET['room_type_id'] ?? 0;
 $check_in = $_GET['check_in'] ?? '';

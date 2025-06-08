@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 $host = 'localhost';
 $user = 'hotel_user';
 $pass = 'P@$$w0rd';
-$db   = 'hotel_booking';
+$db   = 'mk_demo';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
