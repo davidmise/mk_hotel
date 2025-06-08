@@ -3,20 +3,23 @@
     include 'db.php';
 
     // Function to get all rooms
-    function getAllRooms($conn) {
+   function getAllRooms($conn) {
         $options = "";
         $sql = "SELECT id, type, price FROM rooms";
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {
             while ($room = $result->fetch_assoc()) {
-                $options .= "<option value='{$room['id']}'>{$room['type']} - {$room['price']} /night </option>";
+                // Format the price with commas
+                $formatted_price = number_format($room['price']); // Adds commas to price
+                $options .= "<option value='{$room['id']}'>{$room['type']} - TZS {$formatted_price} /night </option>";
             }
         } else {
             $options = "<option disabled>No room types available</option>";
         }
         return $options;
     }
+
 
     function getAvailableRooms($conn, $room_type_id, $check_in, $check_out) {
         $query = "

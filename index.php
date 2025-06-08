@@ -33,6 +33,16 @@
 
   <title>MK Hotel</title>
   <style>
+    .booking-form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: 500; /* optional for emphasis */
+    }
+     .form-group {
+    margin-bottom: 15px;
+  }
+
     .loader {
       display: inline-block;
       width: 14px;
