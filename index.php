@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
 
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -34,8 +34,8 @@
       font-weight: 500; /* optional for emphasis */
     }
      .form-group {
-    margin-bottom: 15px;
-  }
+      margin-bottom: 15px;
+    }
 
     .loaderr {
       display: inline-block;
@@ -96,29 +96,29 @@
     }
 
     .toast {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #28a745;
-  color: white;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
 
-.toast.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.toast.hidden {
-  display: none;
-}
+  .toast.hidden {
+    display: none;
+  }
 
   </style>
 
