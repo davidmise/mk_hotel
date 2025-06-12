@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php'; // this sets $pdo
+ require_once __DIR__ . '/config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $username = $_POST['username'];

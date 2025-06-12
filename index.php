@@ -1,10 +1,4 @@
-<!-- /*
-* Template Name: LuxuryHotel
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<?php include 'model.php'; ?>
+<?php require_once __DIR__ . '/models/model.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -43,7 +37,7 @@
     margin-bottom: 15px;
   }
 
-    .loader {
+    .loaderr {
       display: inline-block;
       width: 14px;
       height: 14px;
@@ -85,7 +79,7 @@
       font-size: 0.9em;
     }
 
-    .loader {
+    .loaderr {
       display: inline-block;
       width: 1em;
       height: 1em;
@@ -100,6 +94,32 @@
         transform: rotate(360deg);
       }
     }
+
+    .toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #28a745;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hidden {
+  display: none;
+}
+
   </style>
 
 
@@ -544,7 +564,7 @@
           <div class="row">
             <div class="col-12 text-center">
               <h3 class="m-0 p-0">If you have any special requests, please feel free to call us. <a
-                  href="tel://++25575780001">+255 757 800 001</a></h3>
+                  href="tel://++25575780001">+255 776 310 757</a></h3>
             </div>
           </div>
         </div>
@@ -587,10 +607,10 @@
                   <div class="col-md-6">
                     <h3>Telephone</h3>
                     <p>
-                      <a href="#">+255 767 492 809</a> <br>
-                      <a href="#">+255 713 300 306</a> <br>
-                      <a href="#">+255 757 800 001</a> <br>
-                      <a href="#">+255 715 014 785</a>
+                      <a href="#">+255 747 685 401/a> <br>
+                      <a href="#">+255 776 310 757</a> <br>
+                      <a href="#">+255 776 310 757</a> <br>
+                      <a href="#">+255 747 685 401</a>
 
                     </p>
                   </div>
@@ -642,6 +662,7 @@
 
     </footer>
   </div>
+<div id="toast" class="toast hidden">Booking successful!</div>
 
   <!-- Search -->
   <script src="js/vendor/jquery-3.3.1.min.js"></script>
@@ -709,7 +730,7 @@
 
         availabilityText.innerHTML = 'Checking availability... <span class="loader"></span>';
 
-        fetch(`get_room_availability.php?room_type_id=${roomTypeId}&check_in=${checkIn}&check_out=${checkOut}`)
+        fetch(`/models/get_room_availability.php?room_type_id=${roomTypeId}&check_in=${checkIn}&check_out=${checkOut}`)
           .then(response => response.json())
           .then(data => {
             if (data.available_rooms > 0) {
@@ -809,7 +830,7 @@
           }
 
           const formData = new FormData(bookingForm);
-          fetch('book.php', {
+          fetch('/models/book.php', {
             method: 'POST',
             body: formData
           })
@@ -820,7 +841,7 @@
           .then(data => {
             console.log('Server response:', data); // Add this line
             if (data.trim() === 'success') {
-              alert('Booking successful!');
+              showToast('Booking successful!');
               bookingForm.reset();
               modal.style.display = 'none';
             } else {
@@ -834,6 +855,18 @@
 
         });
       }
+      function showToast(message, duration = 3000) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.classList.add('hidden'), 400);
+        }, duration);
+      }
+
     });
   </script>
 

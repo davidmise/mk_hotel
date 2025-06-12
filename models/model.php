@@ -1,6 +1,6 @@
     <?php
     // model.php
-    include 'db.php';
+    require_once __DIR__ . '/../config/db.php';
 
     // Function to get all rooms
    function getAllRooms($conn) {
