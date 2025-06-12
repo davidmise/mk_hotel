@@ -5,11 +5,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
+  <meta name="author" content="MK Hotel, Musoma">
   <link rel="shortcut icon" href="favicon.ico">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="MK Hotel is a 4-star hotel in Musoma located in Mwisenge near Lake Victoria. Enjoy our swimming pool, free Wi-Fi, luxurious rooms, and an amazing on-site restaurant. Ideal for business or leisure stays." />
+  <meta name="keywords" content="MK Hotel, Musoma hotel, hotel near Lake Victoria, 4-star hotel Musoma, hotel with pool Musoma, free wifi hotel Musoma, best restaurant Musoma, luxury hotel Tanzania" />
+
+  <meta property="og:title" content="MK Hotel Musoma – 4-Star Luxury Near Lake Victoria" />
+  <meta property="og:description" content="Stay at MK Hotel in Musoma, enjoy beautiful lake views, a pool, free Wi-Fi, and fine dining." />
+  <meta property="og:image" content="images/mk_hotel/up.jpg" />
+  <meta property="og:url" content="https://www.mkhotel.co.tz" />
+
 
   <link
     href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500i,700|Roboto:300,400,500,700&display=swap"
@@ -25,7 +31,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/php_styles.css">
 
-  <title>MK Hotel</title>
+  <title>MK Hotel Musoma – 4-Star Lakefront Luxury Hotel</title>
   <style>
     .booking-form label {
       display: block;
