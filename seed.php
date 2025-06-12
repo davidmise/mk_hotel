@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+  require_once __DIR__ . '/config/db.php';
 
 // Disable foreign key checks temporarily (to avoid constraint errors)
 $conn->query("SET FOREIGN_KEY_CHECKS=0");
