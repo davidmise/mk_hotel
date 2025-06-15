@@ -613,11 +613,8 @@
                   <div class="col-md-6">
                     <h3>Telephone</h3>
                     <p>
-                      <a href="#">+255 747 685 401/a> <br>
-                      <a href="#">+255 776 310 757</a> <br>
                       <a href="#">+255 776 310 757</a> <br>
                       <a href="#">+255 747 685 401</a>
-
                     </p>
                   </div>
                 </div>
